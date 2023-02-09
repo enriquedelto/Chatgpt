@@ -49,11 +49,11 @@ async function chat(text) {
 if (response !== q2) {
 q1 = response;
 } else {
-q1 = "Ask me a random non-personal question.";
+q1 = "Hazme una pregunta no personal al azar.";
 }
 
 // Send the response to the second chat
-c2t.value = "Answer this and then ask me a random question. " + q1;
+c2t.value = "Responda lo siguiente y luego hágame una pregunta al azar." + q1;
 c2b.click();
 
 // Wait for a response from the second chat
@@ -63,8 +63,8 @@ await new Promise(r => setTimeout(r, 20000));
 q2 = Array.from(r2[r2.length - 1].children[0].children[1].children[0].children[0].children[0].children).slice(-1)[0].textContent;
 
 // Schedule the next chat after 5 seconds
-setTimeout(() => chat("Answer this then ask me a random non-personal question: " + q2), 5000);
+setTimeout(() => chat("Responda lo siguiente y luego hágame una pregunta no personal al azar:" + q2), 5000);
 }
 
 // Start the chat with the first message
-chat("Ask me a random non-personal question.");
+chat("Hazme una pregunta no personal al azar.");
